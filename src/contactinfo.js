@@ -38,7 +38,7 @@ function ContactInfo() {
           <p className="pstyle">Phone: 6440 5131</p>
           <p className="pstyle">Email: richard@lemotor.com.sg</p>
           <p className="pstyle">Desmond Tan (Sales) 9272 1418</p>
-          <p className="pstyle">Alan Sim(Purchases) 9821 139</p>
+          <p className="pstyle">Alan Sim(Purchases) 9821 1739</p>
           <video style={videoStyle}>
             <source
               muted
