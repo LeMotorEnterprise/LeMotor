@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/LeMotor/static/js/main.cb7407b6.js",
+    "static/media/Grid1.mp4": "/LeMotor/static/media/Grid1.33a1c0e29bc2a009f48f.mp4",
+    "static/media/Grid4.mp4": "/LeMotor/static/media/Grid4.3852234211855123f800.mp4",
+    "static/media/Grid3.mp4": "/LeMotor/static/media/Grid3.7335ff424b1c2d510a5e.mp4",
+    "static/media/Grid5.mp4": "/LeMotor/static/media/Grid5.9ab5166c8363728f7f1b.mp4",
+    "static/media/Grid6.mp4": "/LeMotor/static/media/Grid6.6cfc22844b37ddf758c6.mp4",
+    "static/media/Grid2.mp4": "/LeMotor/static/media/Grid2.8e409f587cad83484224.mp4",
+    "static/media/Grid7.mp4": "/LeMotor/static/media/Grid7.672f9624b729b9b4adec.mp4",
+    "static/media/topBanner.png": "/LeMotor/static/media/topBanner.345c2dbce79bfcb874ce.png",
+    "static/media/Grid8.mp4": "/LeMotor/static/media/Grid8.e2909ed668b63f746790.mp4",
+    "static/media/contactVideo.mp4": "/LeMotor/static/media/contactVideo.42b99a5ca8d139fef25a.mp4",
+    "index.html": "/LeMotor/index.html",
+    "main.cb7407b6.js.map": "/LeMotor/static/js/main.cb7407b6.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.cb7407b6.js"
+  ]
+}
