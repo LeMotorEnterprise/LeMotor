@@ -25,7 +25,7 @@ function SpliceElement() {
     <div>
       <div style={containerWrapper}>
         <div style={splineContainer} className="splineContainer">
-        <spline-viewer loading-anim-type="spinner-big-dark" url="https://prod.spline.design/8M4rPC5vFy0XKwT7/scene.splinecode"></spline-viewer>
+        <spline-viewer url="https://prod.spline.design/8M4rPC5vFy0XKwT7/scene.splinecode"></spline-viewer>
         </div>
       </div>
     </div>
