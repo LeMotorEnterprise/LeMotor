@@ -35,7 +35,7 @@ const NavBar = () => {
   };
 
   return (
-    <Router basename="/LeMotor">
+    <Router basename="/">
       <div style={bodyStyle}>
         <div
           style={{
@@ -55,7 +55,11 @@ const NavBar = () => {
           <Link to="/" style={linkStyle} className="navlinks">
             Home
           </Link>
-          <a href="https://chatgpt.com/g/g-RitYiGDNl-le-motor-enterprise" style={linkStyle} className="navlinks">
+          <a
+            href="https://chatgpt.com/g/g-RitYiGDNl-le-motor-enterprise"
+            style={linkStyle}
+            className="navlinks"
+          >
             Chat with our AI bot
           </a>
           <Link to="/listings" style={linkStyle} className="navlinks">
