@@ -15,6 +15,7 @@ function Listings() {
     alignItems: "center",
     width: "100%",
     flexDirection: "column",
+    border: "1px solid black",
   };
 
   return (
