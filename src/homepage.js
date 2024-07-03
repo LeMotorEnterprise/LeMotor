@@ -3,6 +3,7 @@ import SpliceElement from "./splice";
 import GridContainer from "./gridContainer";
 import Listings from "./listings";
 import Contactparent from "./contactParent";
+import Socials from "./socials";
 
 function Homepage() {
   return (
@@ -11,6 +12,7 @@ function Homepage() {
       <GridContainer />
       <Listings />
       <Contactparent />
+      <Socials />
     </div>
   );
 }
