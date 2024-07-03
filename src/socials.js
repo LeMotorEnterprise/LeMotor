@@ -90,7 +90,7 @@ function Socials() {
           setShowimage(showimage === false); //update state, set timeframe to true to make the state true
         }}
       >
-        Click here to see our Store @ #01-89 Roxy Squaren
+        Click here to see our Store @ #01-89 Roxy Square
       </button>
 
       <div style={flexContainer1}>
