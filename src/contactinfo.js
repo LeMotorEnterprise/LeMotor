@@ -1,5 +1,5 @@
 import contactvideo from "./Assets/contactVideo.mp4";
-
+import reviewUs from "./Assets/reviewUs.jpg";
 function ContactInfo() {
   const containerWrapper = {
     display: "flex",
@@ -11,45 +11,48 @@ function ContactInfo() {
     marginTop: "10%",
     marginBottom: "3%",
     overflow: "hidden",
+    flexDirection: "column",
   };
 
   const bodyStyle = {
-    width: "40%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    border: "1px solid #051D40",
-    background: "#091b39",
+    width: "90%",
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
     color: "white",
     overflow: "hidden",
+    gridGap: "4%",
   };
 
-  const videoStyle = {
-    width: "25%",
-    height: "100%",
-    overflow: "hidden",
+  const subContent = {
+    marginTop: "3%",
+    background: "#051D40",
+    padding: "10%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   };
+
+  const reviewImg = {
+    width: "100%",
+  }
 
   return (
     <div style={containerWrapper} className="contact">
       <h1>Contact Information</h1>
       <div style={bodyStyle} className="contactBody">
-        <div>
+        <div style={subContent} className="subcontent">
           <p className="pstyle">Phone: 6440 5131</p>
           <p className="pstyle">Email: richard@lemotor.com.sg</p>
           <p className="pstyle">Richard Wong (Purchaser) 9769 2303</p>
-          <p className="pstyle">Alan Sim(Sales) 9821 1739</p>
-          <video style={videoStyle}>
-            <source
-              muted
-              autoPlay
-              playsInline
-              loop
-              src={contactvideo}
-              alt="Contact Video"
-            />
-          </video>
+          <p className="pstyle">Alan Sim (Sales) 9821 1739</p>
         </div>
+
+        <a href="https://g.page/r/CQJmRZAPZC1GEBM/review">
+        <div style={subContent} className="subcontent">
+          <img src={reviewUs} style={reviewImg} alt="reviewUs" />
+        </div>
+        </a>
       </div>
     </div>
   );
