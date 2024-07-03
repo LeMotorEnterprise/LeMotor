@@ -80,7 +80,7 @@ function Socials() {
               "https://www.facebook.com/profile.php?id=61561731779552";
           }}
         >
-          Click here to visit
+          Click this here to visit
         </button>
       </div>
       <button
@@ -90,7 +90,7 @@ function Socials() {
           setShowimage(showimage === false); //update state, set timeframe to true to make the state true
         }}
       >
-        Click See our Store @ #01-89
+        Click here to see our Store @ #01-89 Roxy Square
       </button>
 
       <div style={flexContainer1}>
