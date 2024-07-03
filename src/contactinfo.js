@@ -55,8 +55,8 @@ function ContactInfo() {
         <div style={subContent} className="subcontent">
           <p className="pstyle">Phone: 6440 5131</p>
           <p className="pstyle">Email: richard@lemotor.com.sg</p>
-          <p className="pstyle">Richard Wong (Purchaser) 9769 2303</p>
-          <p className="pstyle">Alan Sim (Sales) 9821 1739</p>
+          <p className="pstyle">Richard Wong (Purchaser): <br></br> 9769 2303</p>
+          <p className="pstyle">Alan Sim (Sales) <br></br>9821 1739</p>
         </div>
 
         <a href="https://g.page/r/CQJmRZAPZC1GEBM/review">
