@@ -13,6 +13,7 @@ function Maps() {
 
   const addressStyle = {
     fontSize: "1.5em",
+    padding:"6%"
   };
 
   const gridStyle = {
@@ -26,13 +27,12 @@ function Maps() {
     height: "600px",
     overflow: "hidden",
   };
-
   return (
     <div>
       <div style={flexWrapper} className="maps">
         <h1>Locate Us!</h1>
         <b>
-          <p style={addressStyle}>1 Roxy Square, 50 E Coast Road S428769</p>
+          <p style={addressStyle}>1 Roxy Square, 50 E Coast Road #01-89 S428769</p>
         </b>
         <div style={gridStyle} className="GridMaps">
           <div className="grid1maps">
