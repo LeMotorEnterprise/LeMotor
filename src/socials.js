@@ -16,7 +16,7 @@ function Socials() {
     justifyContent: "space-between",
     alignItems: "center",
   };
-  
+
   const flexContainer1 = {
     display: "flex",
     flexDirection: "column",
@@ -70,11 +70,17 @@ function Socials() {
       <div style={flexContainer}>
         <a style={aStyle} href="https://www.facebook.com">
           Our facebook page
-        <img src={fbLogo} style={fbLogoStyle} alt="fblogo" />
+          <img
+            src={fbLogo}
+            style={fbLogoStyle}
+            className="storeButton"
+            alt="fblogo"
+          />
         </a>
 
         <button
           style={btn}
+          className="storeButton"
           onClick={() => {
             window.location.href =
               "https://www.facebook.com/profile.php?id=61561731779552";
@@ -86,6 +92,7 @@ function Socials() {
       <button
         // Step 2: Add event handler
         style={buttonStyle}
+        className="storeButton"
         onClick={() => {
           setShowimage(showimage === false); //update state, set timeframe to true to make the state true
         }}
