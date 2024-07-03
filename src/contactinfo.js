@@ -33,6 +33,17 @@ function ContactInfo() {
     alignItems: "center",
   };
 
+  const subContent1 = {
+    marginTop: "3%",
+    background: "#051D40",
+    padding: "10%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
+
   const reviewImg = {
     width: "100%",
   }
@@ -49,7 +60,7 @@ function ContactInfo() {
         </div>
 
         <a href="https://g.page/r/CQJmRZAPZC1GEBM/review">
-        <div style={subContent} className="subcontent">
+        <div style={subContent1} className="subcontent">
           <img src={reviewUs} style={reviewImg} alt="reviewUs" />
         </div>
         </a>
