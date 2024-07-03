@@ -6,6 +6,14 @@
   font-size: 130%;
 }
 
+.subcontent:hover {
+  transition: ease-in-out 0.3s;
+  transform: scale(1.1);
+  overflow: hidden;
+  background: white;
+}
+
+
 .pstyle:hover {
   transition: ease-in-out 0.3s;
   transform: scale(1.1);
@@ -15,6 +23,10 @@
 }
 
 @media (max-width: 768px) {
+  .subcontent {
+    font-size: 50%;
+  }
+
   .maps {
     width: 100% !important;
   }
@@ -47,6 +59,12 @@
 }
 
 @media (max-width: 430px) {
+
+  .subcontent {
+    font-size: 40%;
+  }
+
+
   .maps {
     width: 100% !important;
   }
