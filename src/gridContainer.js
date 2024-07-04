@@ -27,6 +27,7 @@ function GridContainer() {
     width: "60%", // Increased width for better spacing
     marginTop: "3%",
     marginBottom: "5%",
+    height: "100%",
   };
 
   const gridContainers = {
@@ -35,6 +36,7 @@ function GridContainer() {
     alignItems: "center",
     flexDirection: "column",
     width: "100%",
+    height: "100%",
   };
 
   const videoStyle = {
