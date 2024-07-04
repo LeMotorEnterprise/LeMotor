@@ -15,11 +15,6 @@ const splineContainer = {
   width: "100%",
 };
 
-const h1Style = {
-  marginTop: "3%",
-  textAlign: "center",
-};
-
 function SpliceElement() {
   return (
     <div>

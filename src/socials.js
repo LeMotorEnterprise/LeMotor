@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import storeImge from "./Assets/GoogleBusinessProfileImages.jpg";
-import fbLogo from "./Assets/fblogo.png";
+import storeImge from "./Assets/GoogleBusinessProfileImages.webp";
+import fbLogo from "./Assets/fblogo.webp";
 
 function Socials() {
   // Step 1: Initialize state
@@ -75,6 +75,7 @@ function Socials() {
             style={fbLogoStyle}
             className="storeButton"
             alt="fblogo"
+            loading="lazy"
           />
         </a>
 

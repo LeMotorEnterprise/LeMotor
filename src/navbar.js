@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 
 //import local components
-import topbanner from "./Assets/topBanner.png";
+import topbanner from "./Assets/topBanner.webp";
 import Homepage from "./homepage";
 import Listings from "./listings";
 import Carmart from "./carmart";

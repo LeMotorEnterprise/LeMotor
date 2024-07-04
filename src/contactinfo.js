@@ -1,5 +1,4 @@
-import contactvideo from "./Assets/contactVideo.mp4";
-import reviewUs from "./Assets/reviewUs.jpg";
+import reviewUs from "./Assets/reviewUs.webp";
 function ContactInfo() {
   const containerWrapper = {
     display: "flex",

@@ -1,5 +1,4 @@
 import React from "react";
-import Carmart from "./carmart"; // Ensure correct capitalization
 
 function Listings() {
   const h1Style = {
