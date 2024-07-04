@@ -9,11 +9,9 @@ import Listings from "./listings";
 import Carmart from "./carmart";
 import ParentContact from "./contactParent";
 
-const chatbot = () => <div>chatbot</div>;
-
 const NavBar = () => {
   // state for the hamburger menu
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   //initial state is false
   // update isMenuOpen with setIsMenuOpen function
 
@@ -118,8 +116,8 @@ const NavBar = () => {
             className="topbanner"
           />
         </div>
-        <div style={navBarStyle}>
-          <div style={hamburgerStyle} onClick={toggleMenu}>
+        <div style={navBarStyle} className="navbarStyle">
+          <div style={hamburgerStyle} onClick={toggleMenu} className="hamburger">
             &#9776;
           </div>
           <div style={navLinksContainerStyle}>

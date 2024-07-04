@@ -1,3 +1,8 @@
+.hamburger:hover {
+    transition: ease-in-out 0.3s;
+    transform: scale(1.1);
+}
+
 .topbanner:hover {
     transition: ease-in-out 0.8s;
     transform: scale(1.1);
