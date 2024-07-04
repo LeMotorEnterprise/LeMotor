@@ -1,12 +1,12 @@
 import React from "react";
-import grid1 from "./Assets/GridAssets/Grid1.webm";
-import grid2 from "./Assets/GridAssets/Grid2.webm";
-import grid3 from "./Assets/GridAssets/Grid3.webm";
-import grid4 from "./Assets/GridAssets/Grid4.webm";
-import grid5 from "./Assets/GridAssets/Grid5.webm";
-import grid6 from "./Assets/GridAssets/Grid6.webm";
-import grid7 from "./Assets/GridAssets/Grid7.webm";
-import grid8 from "./Assets/GridAssets/Grid8.webm";
+import grid1 from "./Assets/GridAssets/Grid1.mp4";
+import grid2 from "./Assets/GridAssets/Grid2.mp4";
+import grid3 from "./Assets/GridAssets/Grid3.mp4";
+import grid4 from "./Assets/GridAssets/Grid4.mp4";
+import grid5 from "./Assets/GridAssets/Grid5.mp4";
+import grid6 from "./Assets/GridAssets/Grid6.mp4";
+import grid7 from "./Assets/GridAssets/Grid7.mp4";
+import grid8 from "./Assets/GridAssets/Grid8.mp4";
 
 
 function GridContainer() {
@@ -27,7 +27,6 @@ function GridContainer() {
     width: "60%", // Increased width for better spacing
     marginTop: "3%",
     marginBottom: "5%",
-    height: "100%",
   };
 
   const gridContainers = {
@@ -36,7 +35,6 @@ function GridContainer() {
     alignItems: "center",
     flexDirection: "column",
     width: "100%",
-    height: "100%",
   };
 
   const videoStyle = {
