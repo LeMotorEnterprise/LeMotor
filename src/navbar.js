@@ -12,22 +12,31 @@ import ParentContact from "./contactParent";
 const chatbot = () => <div>chatbot</div>;
 
 const NavBar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // state for the hamburger menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  //initial state is false
+  // update isMenuOpen with setIsMenuOpen function
+
   const [isMobileView, setIsMobileView] = useState(false);
+  //initial state is false
+  // update isMobileView with setIsMobileView function
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    //set isMenuOpen reverses the boolean value of isMenuOpen
   };
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768);
+      setIsMobileView(window.innerWidth <= 768); //trigger the hamburger menu when the screen width is less than or equal to 768px
     };
 
     handleResize();
+    // call the handleResize function
     window.addEventListener("resize", handleResize);
 
     return () => {
+      // clean up
       window.removeEventListener("resize", handleResize);
     };
   }, []);
