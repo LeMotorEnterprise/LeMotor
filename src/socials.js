@@ -68,7 +68,7 @@ function Socials() {
   return (
     <div style={flexContainer}>
       <div style={flexContainer}>
-        <a style={aStyle} href="https://www.facebook.com">
+        <a  className="socials-container" style={aStyle} href="https://www.facebook.com">
           Our facebook page
           <img
             src={fbLogo}

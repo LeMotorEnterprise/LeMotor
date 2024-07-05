@@ -101,12 +101,11 @@ function DarkMode() {
       ModeButton.style.color = darkMode ? "#051d40" : "white";
     }
 
-    //-------------A tags-----------------------//
-    const aTags = document.querySelectorAll("a");
-    aTags.forEach((a) => {
-      //ensure that the DOM element has loaded
-      a.style.color = darkMode ? "white" : "black";
-    });
+    //-------------A tags that need styling--------------//
+    const socialsContainer = document.getElementsByClassName("socials-container")[0];
+    if (socialsContainer) {
+        socialsContainer.style.color = darkMode ? "white" : "black";
+    }
   }, [darkMode]);
 
   return (
