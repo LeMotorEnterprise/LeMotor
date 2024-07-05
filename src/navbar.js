@@ -108,6 +108,7 @@ const NavBar = () => {
             textAlign: "center",
             padding: "20px 0",
           }}
+          className="topbannerContainer"
         >
           <img
             src={topbanner}
