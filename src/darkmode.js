@@ -104,7 +104,7 @@ function DarkMode() {
     //-------------A tags that need styling--------------//
     const socialsContainer = document.getElementsByClassName("socials-container")[0];
     if (socialsContainer) {
-        socialsContainer.style.color = darkMode ? "white" : "black";
+        socialsContainer.style.color = darkMode ? "white" : "white";
     }
   }, [darkMode]);
 
