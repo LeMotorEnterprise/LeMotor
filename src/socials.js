@@ -72,7 +72,7 @@ function Socials() {
 
   return (
     <div style={flexContainer}>
-      <ElfsightWidget style={widget} widgetId="ada44ccb-bb34-4d2e-80b0-52d16e71f327" />
+      <ElfsightWidget style={widget} widgetId="35a1e659-a7f9-44f5-aa98-3a876a0a9467" />
       <div style={flexContainer}>
         <a
           className="socials-container"
