@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import storeImge from "./Assets/GoogleBusinessProfileImages.webp";
 import fbLogo from "./Assets/fblogo.webp";
+import { ElfsightWidget } from "react-elfsight-widget";
 
 function Socials() {
   // Step 1: Initialize state
@@ -67,8 +68,13 @@ function Socials() {
 
   return (
     <div style={flexContainer}>
+      <ElfsightWidget widgetId="ada44ccb-bb34-4d2e-80b0-52d16e71f327" />
       <div style={flexContainer}>
-        <a  className="socials-container" style={aStyle} href="https://www.facebook.com">
+        <a
+          className="socials-container"
+          style={aStyle}
+          href="https://www.facebook.com"
+        >
           Our facebook page
           <img
             src={fbLogo}
