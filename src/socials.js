@@ -66,9 +66,13 @@ function Socials() {
     height: "10%",
   };
 
+  const widget = {
+    width: "50%",
+  };
+
   return (
     <div style={flexContainer}>
-      <ElfsightWidget widgetId="ada44ccb-bb34-4d2e-80b0-52d16e71f327" />
+      <ElfsightWidget style={widget} widgetId="ada44ccb-bb34-4d2e-80b0-52d16e71f327" />
       <div style={flexContainer}>
         <a
           className="socials-container"
