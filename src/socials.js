@@ -23,16 +23,7 @@ function Socials() {
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
-  };
-
-  const aStyle = {
-    color: "black",
-    textDecoration: "none",
-    fontSize: "200%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
+    width: "100%",
   };
 
   const buttonStyle = {
@@ -42,16 +33,6 @@ function Socials() {
     fontFamily: "Montserrat, sans-serif",
     backgroundColor: "#051d40",
     color: "white",
-  };
-
-  const btn = {
-    marginTop: "3%",
-    fontSize: "100%",
-    padding: "1%",
-    fontFamily: "Montserrat, sans-serif",
-    backgroundColor: "#0866ff",
-    color: "white",
-    border: "none",
   };
 
   const photoStyle = {
@@ -70,11 +51,23 @@ function Socials() {
     width: "50%",
   };
 
+  const widget1 = {
+    width: "80%",
+    marginTop: "10%",
+  };
+
   return (
     <div style={flexContainer}>
-      <ElfsightWidget style={widget} widgetId="35a1e659-a7f9-44f5-aa98-3a876a0a9467" />
+      <ElfsightWidget
+        style={widget}
+        widgetId="35a1e659-a7f9-44f5-aa98-3a876a0a9467"
+      />
+      <ElfsightWidget
+        style={widget1}
+        widgetId="977f6169-8a58-40e9-8ba0-6b4e50d534d9"
+      />
       <div style={flexContainer}>
-        <a
+        {/* <a
           className="socials-container"
           style={aStyle}
           href="https://www.facebook.com"
@@ -87,9 +80,9 @@ function Socials() {
             alt="fblogo"
             loading="lazy"
           />
-        </a>
+        </a> */}
 
-        <button
+        {/* <button
           style={btn}
           className="storeButton"
           onClick={() => {
@@ -98,7 +91,7 @@ function Socials() {
           }}
         >
           Click this here to visit
-        </button>
+        </button> */}
       </div>
       <button
         // Step 2: Add event handler
