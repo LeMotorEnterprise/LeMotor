@@ -70,13 +70,6 @@ function DarkMode() {
       videoContainer.style.display = darkMode ? "initial" : "none";
     }
 
-    //Dark mode video replacement for the spline container
-    const canvaEembed = document.getElementsByClassName("canva-embed")[0];
-    if (canvaEembed) {
-      //ensure that the DOM element has loaded
-      canvaEembed.style.filter = darkMode ? "invert(1)" : "invert(0)";
-    }
-
     //-------------Google Maps----------------------------//
     // Only invert the color of google maps not street view
     const grid1Maps = document.getElementsByClassName("grid1maps")[0];
