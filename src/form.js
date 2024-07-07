@@ -1,37 +1,88 @@
-// Import required modules
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Logo from "./Assets/webwizards.webp";
 
-// Create a functional component
 const ContactForm = () => {
-  //State for opening and closing the form
   const [isOpen, setIsOpen] = useState(false);
-
-  //State for storing the token client
   const [tokenClient, setTokenClient] = useState(null);
-
-  //State for storing the access token
   const [accessToken, setAccessToken] = useState(null);
+  const [pendingSubmission, setPendingSubmission] = useState(null);
 
-  //---------USE EFFECT HOOK---------//
-  //@params initializeGisClient - Function to initialize the Google Identity Services client
+  const postToGoogleSheets = useCallback(
+    async (data) => {
+      if (!accessToken) {
+        console.error("Access token is not available");
+        return;
+      }
+
+      try {
+        const spreadsheetId = "1Fj2IG0uD3Le35zNXFaYOey4aCKyOE19QIvbr7Dtyhzw";
+        const range = "Sheet1!A1:B1"; // Simplified test range
+
+        const requestBody = {
+          values: [
+            [
+              data.firstName,
+              data.lastName,
+              data.email,
+              data.phone,
+              data.message,
+            ],
+          ],
+        };
+
+        console.log("Request Body:", requestBody);
+        console.log("Using access token:", accessToken);
+
+        const response = await fetch(
+          `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}:append?valueInputOption=RAW`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${accessToken}`,
+            },
+            body: JSON.stringify(requestBody),
+          }
+        );
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error("Full error response:", errorText);
+          throw new Error(`Failed to submit form: ${errorText}`);
+        }
+
+        const responseData = await response.json();
+        console.log("Response Data:", responseData);
+
+        alert("Form submitted successfully!");
+        setPendingSubmission(null);
+      } catch (error) {
+        console.error("Detailed error:", error);
+        alert("There was an error submitting the form. Please try again.");
+      }
+    },
+    [accessToken]
+  );
+
   useEffect(() => {
     const initializeGisClient = () => {
       const client = window.google.accounts.oauth2.initTokenClient({
-        // Initialize the token client
         client_id:
-          "841295177666-bc1cj07ktal1s6a590qs5l8sre4uvpjo.apps.googleusercontent.com", // Client ID
-        scope: "https://www.googleapis.com/auth/spreadsheets", // Scope for Google Sheets API
-        callback: (response) => {
+          "841295177666-bc1cj07ktal1s6a590qs5l8sre4uvpjo.apps.googleusercontent.com",
+        scope: "https://www.googleapis.com/auth/spreadsheets",
+        callback: async (response) => {
           if (response.error) {
-            console.error("Error during token request:", response.error); // Log the error
+            console.error("Error during token request:", response.error);
           } else {
-            console.log("Access Token:", response.access_token); // Log the access token
-            setAccessToken(response.access_token); // Set the access token in the state
+            console.log("Access Token:", response.access_token);
+            setAccessToken(response.access_token);
+            if (pendingSubmission) {
+              await postToGoogleSheets(pendingSubmission);
+            }
           }
         },
       });
-      setTokenClient(client); // Set the token client in the state
+      setTokenClient(client);
     };
 
     if (
@@ -39,26 +90,30 @@ const ContactForm = () => {
       window.google.accounts &&
       window.google.accounts.oauth2
     ) {
-      // Check if the Google Identity Services client is available
-      initializeGisClient(); // Initialize the Google Identity Services client
+      initializeGisClient();
     } else {
-      window.addEventListener("load", initializeGisClient); // Add an event listener to initialize the Google Identity Services client when the window loads
+      window.addEventListener("load", initializeGisClient);
     }
-  }, []);
+
+    return () => {
+      window.removeEventListener("load", initializeGisClient);
+    };
+  }, [postToGoogleSheets, pendingSubmission]);
+
+  useEffect(() => {
+    if (accessToken && pendingSubmission) {
+      postToGoogleSheets(pendingSubmission);
+    }
+  }, [accessToken, pendingSubmission, postToGoogleSheets]);
 
   const toggleForm = () => {
-    // Function to toggle the form
     setIsOpen(!isOpen);
   };
 
   const handleSubmit = async (e) => {
-    // Function to handle form submission
     e.preventDefault();
 
     const formData = new FormData(e.target);
-
-    //---------------------------------FORM DATA---------------------------------//
-    //Object to store the form data
     const data = {
       firstName: formData.get("firstName"),
       lastName: formData.get("lastName"),
@@ -66,65 +121,15 @@ const ContactForm = () => {
       phone: formData.get("phone"),
       message: formData.get("message"),
     };
-    //---------------------------------FORM DATA---------------------------------//
+
+    setPendingSubmission(data);
 
     if (!accessToken) {
-      // Check if the access token is available
-      tokenClient.requestAccessToken(); // Request the access token
+      tokenClient.requestAccessToken();
     } else {
-      // If the access token is available
-      await postToGoogleSheets(data); // Call the function to post the form data to Google Sheets
+      await postToGoogleSheets(data);
     }
   };
-
-  //---------------------------------GOOGLE SHEET PARAMETERS---------------------------------//
-  const postToGoogleSheets = async (data) => {
-    try {
-      //-----ENTER SPREADSHEET ID---------------------------------//
-      const spreadsheetId = "1Fj2IG0uD3Le35zNXFaYOey4aCKyOE19QIvbr7Dtyhzw";
-
-      //-----ENTER RANGE---------------------------------//
-      const range = "Sheet1!A1:B1"; // Simplified test range
-
-      //-----REQUEST BODY---------------------------------//
-      const requestBody = {
-        values: [
-          [data.firstName, data.lastName, data.email, data.phone, data.message],
-        ],
-      };
-
-      //-----FETCH REQUEST---------------------------------//
-      console.log("Request Body:", requestBody);
-
-      //---------------------------------FETCH REQUEST---------------------------------//
-      const response = await fetch(
-        `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}:append?valueInputOption=RAW`,
-        {
-          // HTTP METHODS HERE
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-          body: JSON.stringify(requestBody),
-        }
-      );
-
-      const responseData = await response.json();
-      console.log("Response Data:", responseData);
-
-      if (!response.ok) {
-        console.error("Error Response Data:", responseData);
-        throw new Error(`Failed to submit form: ${responseData.error.message}`);
-      }
-
-      alert("Form submitted successfully!");
-    } catch (error) {
-      console.error("Error submitting form:", error.message);
-      alert("There was an error submitting the form: " + error.message);
-    }
-  };
-
   //---------INLINE CSS STYLES---------//
   const Pstyle = {
     fontFamily: "League Spartan !important",
