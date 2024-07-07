@@ -13,13 +13,6 @@ const ContactForm = () => {
   //State for storing the access token
   const [accessToken, setAccessToken] = useState(null);
 
-  //---------INLINE CSS STYLES---------//
-  const h1style = {
-    fontFamily: "League Spartan",
-    color: "white",
-    textAlign: "center",
-  };
-
   //---------USE EFFECT HOOK---------//
   //@params initializeGisClient - Function to initialize the Google Identity Services client
   useEffect(() => {
@@ -75,9 +68,11 @@ const ContactForm = () => {
     };
     //---------------------------------FORM DATA---------------------------------//
 
-    if (!accessToken) { // Check if the access token is available
+    if (!accessToken) {
+      // Check if the access token is available
       tokenClient.requestAccessToken(); // Request the access token
-    } else { // If the access token is available
+    } else {
+      // If the access token is available
       await postToGoogleSheets(data); // Call the function to post the form data to Google Sheets
     }
   };
@@ -105,7 +100,7 @@ const ContactForm = () => {
       const response = await fetch(
         `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}:append?valueInputOption=RAW`,
         {
-          // HTTP METHODS HERE 
+          // HTTP METHODS HERE
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -128,6 +123,13 @@ const ContactForm = () => {
       console.error("Error submitting form:", error.message);
       alert("There was an error submitting the form: " + error.message);
     }
+  };
+
+  //---------INLINE CSS STYLES---------//
+  const Pstyle = {
+    fontFamily: "League Spartan !important",
+    color: "white !important",
+    textAlign: "center",
   };
 
   const styles = {
@@ -291,7 +293,7 @@ const ContactForm = () => {
             Submit
           </button>
         </form>
-        <h1 style={h1style}>Powered by Web Wizard Forms</h1>
+        <p style={Pstyle}>Powered by Web Wizard Forms</p>
         <img
           src={Logo}
           alt="Web Wizards"
