@@ -49,6 +49,9 @@ function Socials() {
 
   const widget = {
     width: "50%",
+    backgroundColor: "white",
+    padding: "30px",
+    borderRadius: "20px",
   };
 
   const widget1 = {
