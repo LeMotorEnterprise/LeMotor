@@ -5,6 +5,12 @@ const ContactForm = () => {
   const [tokenClient, setTokenClient] = useState(null);
   const [accessToken, setAccessToken] = useState(null);
 
+  const h1style = {
+    fontFamily: "League Spartan",
+    color: "white",
+    textAlign: "center",
+  };
+
   useEffect(() => {
     const initializeGisClient = () => {
       const client = window.google.accounts.oauth2.initTokenClient({
@@ -253,7 +259,7 @@ const ContactForm = () => {
             Submit
           </button>
         </form>
-        <h1 style={{fontFamily: "League Spartan", color: "white"}}>Powered by Web Wizard Forms</h1>
+        <h1 style={h1style}>Powered by Web Wizard Forms</h1>
         <img src={Logo} alt="Web Wizards" style={{ width: "100%", marginTop: "20px" }} />
       </div>
     </>
