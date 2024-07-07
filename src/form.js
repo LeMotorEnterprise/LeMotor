@@ -1,100 +1,132 @@
+// Import required modules
 import React, { useState, useEffect } from "react";
 import Logo from "./Assets/webwizards.webp";
+
+// Create a functional component
 const ContactForm = () => {
+  //State for opening and closing the form
   const [isOpen, setIsOpen] = useState(false);
+
+  //State for storing the token client
   const [tokenClient, setTokenClient] = useState(null);
+
+  //State for storing the access token
   const [accessToken, setAccessToken] = useState(null);
 
+  //---------INLINE CSS STYLES---------//
   const h1style = {
     fontFamily: "League Spartan",
     color: "white",
     textAlign: "center",
   };
 
+  //---------USE EFFECT HOOK---------//
+  //@params initializeGisClient - Function to initialize the Google Identity Services client
   useEffect(() => {
     const initializeGisClient = () => {
       const client = window.google.accounts.oauth2.initTokenClient({
-        client_id: '841295177666-bc1cj07ktal1s6a590qs5l8sre4uvpjo.apps.googleusercontent.com',
-        scope: 'https://www.googleapis.com/auth/spreadsheets',
+        // Initialize the token client
+        client_id:
+          "841295177666-bc1cj07ktal1s6a590qs5l8sre4uvpjo.apps.googleusercontent.com", // Client ID
+        scope: "https://www.googleapis.com/auth/spreadsheets", // Scope for Google Sheets API
         callback: (response) => {
           if (response.error) {
-            console.error('Error during token request:', response.error);
+            console.error("Error during token request:", response.error); // Log the error
           } else {
-            console.log('Access Token:', response.access_token);
-            setAccessToken(response.access_token);
+            console.log("Access Token:", response.access_token); // Log the access token
+            setAccessToken(response.access_token); // Set the access token in the state
           }
         },
       });
-      setTokenClient(client);
+      setTokenClient(client); // Set the token client in the state
     };
 
-    if (window.google && window.google.accounts && window.google.accounts.oauth2) {
-      initializeGisClient();
+    if (
+      window.google &&
+      window.google.accounts &&
+      window.google.accounts.oauth2
+    ) {
+      // Check if the Google Identity Services client is available
+      initializeGisClient(); // Initialize the Google Identity Services client
     } else {
-      window.addEventListener('load', initializeGisClient);
+      window.addEventListener("load", initializeGisClient); // Add an event listener to initialize the Google Identity Services client when the window loads
     }
   }, []);
 
   const toggleForm = () => {
+    // Function to toggle the form
     setIsOpen(!isOpen);
   };
 
   const handleSubmit = async (e) => {
+    // Function to handle form submission
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const data = {
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      message: formData.get('message'),
-    };
 
-    if (!accessToken) {
-      tokenClient.requestAccessToken();
-    } else {
-      await postToGoogleSheets(data);
+    //---------------------------------FORM DATA---------------------------------//
+    //Object to store the form data
+    const data = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      message: formData.get("message"),
+    };
+    //---------------------------------FORM DATA---------------------------------//
+
+    if (!accessToken) { // Check if the access token is available
+      tokenClient.requestAccessToken(); // Request the access token
+    } else { // If the access token is available
+      await postToGoogleSheets(data); // Call the function to post the form data to Google Sheets
     }
   };
 
+  //---------------------------------GOOGLE SHEET PARAMETERS---------------------------------//
   const postToGoogleSheets = async (data) => {
     try {
-      const spreadsheetId = '1Fj2IG0uD3Le35zNXFaYOey4aCKyOE19QIvbr7Dtyhzw';
-      const range = 'Sheet1!A1:B1'; // Simplified test range
+      //-----ENTER SPREADSHEET ID---------------------------------//
+      const spreadsheetId = "1Fj2IG0uD3Le35zNXFaYOey4aCKyOE19QIvbr7Dtyhzw";
 
+      //-----ENTER RANGE---------------------------------//
+      const range = "Sheet1!A1:B1"; // Simplified test range
+
+      //-----REQUEST BODY---------------------------------//
       const requestBody = {
         values: [
-          [data.firstName, data.lastName, data.email, data.phone, data.message]
-        ]
+          [data.firstName, data.lastName, data.email, data.phone, data.message],
+        ],
       };
 
-      console.log('Request Body:', requestBody);
+      //-----FETCH REQUEST---------------------------------//
+      console.log("Request Body:", requestBody);
 
+      //---------------------------------FETCH REQUEST---------------------------------//
       const response = await fetch(
         `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}:append?valueInputOption=RAW`,
         {
-          method: 'POST',
+          // HTTP METHODS HERE 
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${accessToken}`
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
           },
-          body: JSON.stringify(requestBody)
+          body: JSON.stringify(requestBody),
         }
       );
 
       const responseData = await response.json();
-      console.log('Response Data:', responseData);
+      console.log("Response Data:", responseData);
 
       if (!response.ok) {
-        console.error('Error Response Data:', responseData);
+        console.error("Error Response Data:", responseData);
         throw new Error(`Failed to submit form: ${responseData.error.message}`);
       }
 
-      alert('Form submitted successfully!');
+      alert("Form submitted successfully!");
     } catch (error) {
-      console.error('Error submitting form:', error.message);
-      alert('There was an error submitting the form: ' + error.message);
+      console.error("Error submitting form:", error.message);
+      alert("There was an error submitting the form: " + error.message);
     }
   };
 
@@ -260,7 +292,11 @@ const ContactForm = () => {
           </button>
         </form>
         <h1 style={h1style}>Powered by Web Wizard Forms</h1>
-        <img src={Logo} alt="Web Wizards" style={{ width: "100%", marginTop: "20px" }} />
+        <img
+          src={Logo}
+          alt="Web Wizards"
+          style={{ width: "100%", marginTop: "20px" }}
+        />
       </div>
     </>
   );
