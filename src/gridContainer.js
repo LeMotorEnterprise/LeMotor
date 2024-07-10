@@ -8,7 +8,6 @@ import grid6 from "./Assets/GridAssets/Grid6.mp4";
 import grid7 from "./Assets/GridAssets/Grid7.mp4";
 import grid8 from "./Assets/GridAssets/Grid8.mp4";
 
-
 function GridContainer() {
   const flexWrapper = {
     display: "flex",

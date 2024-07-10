@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import storeImge from "./Assets/GoogleBusinessProfileImages.webp";
-import fbLogo from "./Assets/fblogo.webp";
 import { ElfsightWidget } from "react-elfsight-widget";
+import GoogleReviews from "./reviewCarousell";
 
 function Socials() {
   // Step 1: Initialize state
@@ -41,30 +41,23 @@ function Socials() {
     width: "100%",
   };
 
-  const fbLogoStyle = {
-    marginTop: "3%",
-    width: "10%",
-    height: "10%",
-  };
+  // const fbLogoStyle = {
+  //   marginTop: "3%",
+  //   width: "10%",
+  //   height: "10%",
+  // };
 
-  const widget = {
-    width: "50%",
-    backgroundColor: "white",
-    padding: "30px",
-    borderRadius: "20px",
-  };
 
   const widget1 = {
     width: "80%",
-    marginTop: "10%",
   };
 
   return (
     <div style={flexContainer}>
-      <ElfsightWidget
-        style={widget}
-        widgetId="35a1e659-a7f9-44f5-aa98-3a876a0a9467"
-      />
+      <div style={widget1}>
+        <GoogleReviews />
+      </div>{" "}
+      
       <ElfsightWidget
         style={widget1}
         widgetId="977f6169-8a58-40e9-8ba0-6b4e50d534d9"
@@ -106,7 +99,6 @@ function Socials() {
       >
         Click here to see our Store @ #01-89 Roxy Square
       </button>
-
       <div style={flexContainer1}>
         <img style={photoStyle} src={storeImge} alt="store" />
       </div>
