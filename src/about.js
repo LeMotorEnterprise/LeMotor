@@ -8,7 +8,7 @@ const AccordionItem = ({ title, children }) => {
       <div
         style={{
           marginTop: "5%",
-          border: "1px solid #051d41",
+          border: "1px solid #0a1540",
           borderRadius: "0.5rem",
           overflow: "hidden",
           background: "#051d41",
