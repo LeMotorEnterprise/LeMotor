@@ -16,7 +16,6 @@ function Quote() {
   const imageStyle = {
     width: "40%",
     borderRadius: "1.5rem",
-    padding: "5rem",
     background: "#0a1540",
   };
 
