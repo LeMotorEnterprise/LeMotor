@@ -88,6 +88,7 @@ function GridContainer() {
             className="grid-video"
             style={videoStyle}
             alt="Placeholder Video"
+            loading="lazy"
             muted
             autoPlay
             playsInline
@@ -100,6 +101,7 @@ function GridContainer() {
           <video
             src={grid5}
             className="grid-video"
+            loading="lazy"
             style={videoStyle}
             alt="Placeholder Video"
             muted
@@ -130,6 +132,7 @@ function GridContainer() {
             className="grid-video"
             style={videoStyle}
             alt="Placeholder Video"
+            loading="lazy"
             muted
             autoPlay
             playsInline
