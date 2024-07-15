@@ -10,7 +10,6 @@ function ContactInfo() {
     marginTop: "10%",
     marginBottom: "3%",
     overflow: "hidden",
-    flexDirection: "column",
   };
 
   const bodyStyle = {
@@ -20,6 +19,7 @@ function ContactInfo() {
     color: "white",
     overflow: "hidden",
     gridGap: "4%",
+    textDecoration: "bold",
   };
 
   const subContent = {
@@ -30,6 +30,8 @@ function ContactInfo() {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    fontSize: "130%",
+    textDecoration: "bold",
   };
 
   const subContent1 = {
@@ -40,12 +42,28 @@ function ContactInfo() {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    textDecoration: "bold",
   };
-
 
   const reviewImg = {
     width: "100%",
-  }
+  };
+
+  const openingTime = {
+    fontWeight: "bold",
+    background: "white",
+    color: "#051d41",
+    margin: "4%",
+    padding: "4%",
+    border: "1px solid #051d41",
+    borderRadius: "1.5rem",
+  };
+
+  const h3Style = {
+    color: "#051d41",
+    marginBottom: "0",
+    marginTop: "15%",
+  };
 
   return (
     <div style={containerWrapper} className="contact">
@@ -54,16 +72,25 @@ function ContactInfo() {
         <div style={subContent} className="subcontent">
           <p className="pstyle">Phone: 6440 5131</p>
           <p className="pstyle">Email: richard@lemotor.com.sg</p>
-          <p className="pstyle">Richard Wong (Purchaser): <br></br> 9769 2303</p>
-          <p className="pstyle">Alan Sim (Sales) <br></br>9821 1739</p>
+          <p className="pstyle">
+            Richard Wong (Purchaser): <br></br> 9769 2303
+          </p>
+          <p className="pstyle">
+            Alan Sim (Sales) <br></br>9821 1739
+          </p>
         </div>
 
         <a href="https://g.page/r/CQJmRZAPZC1GEBM/review">
-        <div style={subContent1} className="subcontent">
-          <img src={reviewUs} style={reviewImg} alt="reviewUs" />
-        </div>
+          <div style={subContent1} className="subcontent">
+            <img src={reviewUs} style={reviewImg} alt="reviewUs" />
+          </div>
         </a>
       </div>
+      <h3 style={h3Style}>Service Hours</h3>
+      <p style={openingTime}>
+        Mon - Fri: 10am - 7pm <br></br><br></br>
+        Sat & Sun: Closed
+      </p>
     </div>
   );
 }

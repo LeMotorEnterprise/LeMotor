@@ -20,7 +20,7 @@ function DarkMode() {
     border: "1px solid white",
   };
 
-  useEffect(() => {
+  useEffect(() => { //useEffect is a hook that runs after the first render and every time the component updates
     //-------------Background color of the body----------------//
 
     //If darkMode is true, set the background color of the body to #202833
@@ -99,7 +99,7 @@ function DarkMode() {
     if (socialsContainer) {
         socialsContainer.style.color = darkMode ? "white" : "black";
     }
-  }, [darkMode]);
+  }, [darkMode]); // set the dependency to darkMode
 
   return (
     <div>

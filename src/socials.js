@@ -17,7 +17,7 @@ function Socials() {
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
-    width: "70%",
+    width: "100%",
   };
 
   const photoStyle = {

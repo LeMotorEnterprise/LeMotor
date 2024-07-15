@@ -1,4 +1,4 @@
-import quoteImage from "./Assets/Quote.png";
+import quoteImage from "./Assets/quote.png";
 
 function Quote() {
   const containerWrapper = {
@@ -14,9 +14,9 @@ function Quote() {
   };
 
   const imageStyle = {
-    width: "40%",
+    width: "70%",
     borderRadius: "1.5rem",
-    background: "#0a1540",
+    border: "1px solid #0a1540",
   };
 
   return <div style={containerWrapper}>
