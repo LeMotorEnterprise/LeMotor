@@ -63,6 +63,7 @@ function ContactInfo() {
     color: "#051d41",
     marginBottom: "0",
     marginTop: "15%",
+    fontSize: "200%",
   };
 
   return (
