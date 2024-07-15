@@ -8,6 +8,7 @@ import Homepage from "./homepage";
 import Listings from "./listings";
 import Carmart from "./carmart";
 import ParentContact from "./contactParent";
+import ListingParent from "./ListingParent";
 
 const NavBar = () => {
   // state for the hamburger menu
@@ -132,7 +133,7 @@ const NavBar = () => {
             >
               Chat with our AI bot
             </a>
-            <Link to="/listings" style={linkStyle} className="navlinks">
+            <Link to="/ListingParent" style={linkStyle} className="navlinks">
               Listings
             </Link>
             <Link to="/contact" style={linkStyle} className="navlinks">
@@ -158,7 +159,7 @@ const NavBar = () => {
                 Chat with our AI bot
               </a>
               <Link
-                to="/listings"
+                to="/ListingParent"
                 style={linkStyle}
                 className="navlinks"
                 onClick={toggleMenu}
@@ -180,7 +181,7 @@ const NavBar = () => {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/chat-with-jasonbot" element={<chatbot />} />
-          <Route path="/listings" element={<Listings />} />
+          <Route path="/ListingParent" element={<ListingParent />} />
           <Route path="/contact" element={<ParentContact />} />
         </Routes>
       </div>
