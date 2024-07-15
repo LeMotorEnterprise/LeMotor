@@ -1,6 +1,5 @@
 import Listings from "./listings";
 import CarOptionsSection from "./about";
-import 
 
 function ListingParent() {
   return (
