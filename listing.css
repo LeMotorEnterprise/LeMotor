@@ -22,9 +22,33 @@
   color: black;
 }
 
+@media (max-width: 1920px) {
+  .subcontent {
+    font-size: 170% !important;
+  }
+}
+
+@media (max-width: 1540px) {
+  .subcontent {
+    font-size: 120% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .subcontent {
+    font-size: 100% !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .subcontent {
+    font-size: 80% !important;
+  }
+}
+
 @media (max-width: 768px) {
   .subcontent {
-    font-size: 50%;
+    font-size: 50% !important;
   }
 
   .maps {
