@@ -90,7 +90,7 @@ function ContactInfo() {
       <h3 style={h3Style}>Service Hours</h3>
       <p style={openingTime}>
         Mon - Fri: 10am - 7pm <br></br><br></br>
-        Sat & Sun: Closed
+        Sat & Sun: 11am - 6pm
       </p>
     </div>
   );
