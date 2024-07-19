@@ -16,7 +16,6 @@ function Homepage() {
       <GridContainer />
       <Listings />
       <Contactparent />
-      <Socials />
     </div>
   );
 }
