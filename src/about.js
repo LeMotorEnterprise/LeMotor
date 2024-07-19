@@ -1,60 +1,33 @@
 import React, { useState } from "react";
+import "./about.css";
 
 const AccordionItem = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div style={{display: "flex", justifyContent:"center", alignItems:"center"}}>
-      <div
-        style={{
-          marginTop: "5%",
-          border: "1px solid #0a1540",
-          borderRadius: "0.5rem",
-          overflow: "hidden",
-          background: "#051d41",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-        }}
-      >
+    <div className="accordion-wrapper">
+      <div className="accordion-item">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="accordionTabs"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-            padding: "1rem 5rem",
-            textAlign: "center",
-            transition: "background-color 0.3s",
-            fontSize: "150%",
-            background: "#051d41",
-            color: "white",
-          }}
+          className="accordion-button"
         >
-          <span style={{ fontWeight: "600" }}>{title}</span>
+          <span>{title}</span>
           <span
+            className="accordion-icon"
             style={{
               transform: isOpen ? "rotate(45deg)" : "rotate(0)",
-              transition: "transform 0.3s",
             }}
           >
             +
           </span>
         </button>
         <div
+          className="accordion-content"
           style={{
             maxHeight: isOpen ? "1000px" : "0",
-            overflow: "hidden",
-            transition: "max-height 0.3s ease-in-out",
           }}
         >
-          <div style={{ padding: "1.5rem", background: "white" }}>
-            {children}
-          </div>
+          <div className="accordion-inner">{children}</div>
         </div>
       </div>
     </div>
@@ -63,30 +36,14 @@ const AccordionItem = ({ title, children }) => {
 
 const CarOptionsSection = () => {
   return (
-    <div
-      style={{
-        maxWidth: "64rem",
-        margin: "0 auto",
-        padding: "1.5rem",
-        borderRadius: "0.75rem",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "1.875rem",
-          fontWeight: "bold",
-          textAlign: "center",
-        }}
-      >
-        Why Le Motor Enterprise
-      </h1>
+    <div className="car-options-section">
+      <h1 className="section-title">Why Le Motor Enterprise</h1>
+      <p className="section-subtitle">Click to expand</p>
 
       <div>
         <AccordionItem title="Renting a Car in Singapore">
-          <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>
-            Benefits of Renting:
-          </h4>
-          <ul style={{ listStyleType: "disc", paddingLeft: "1.25rem", marginBottom: "1rem" }}>
+          <h4 className="content-title">Benefits of Renting:</h4>
+          <ul className="content-list">
             <li>Flexibility for short-term needs</li>
             <li>No long-term financial commitment</li>
             <li>Access to newer models</li>
@@ -99,10 +56,8 @@ const CarOptionsSection = () => {
         </AccordionItem>
 
         <AccordionItem title="Buying a Used Car in Singapore">
-          <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>
-            Advantages of Buying Used:
-          </h4>
-          <ul style={{ listStyleType: "disc", paddingLeft: "1.25rem", marginBottom: "1rem" }}>
+          <h4 className="content-title">Advantages of Buying Used:</h4>
+          <ul className="content-list">
             <li>Lower initial cost compared to new cars</li>
             <li>Avoid steep depreciation of new vehicles</li>
             <li>More affordable Certificate of Entitlement (COE)</li>
@@ -115,10 +70,8 @@ const CarOptionsSection = () => {
         </AccordionItem>
 
         <AccordionItem title="Factors to Consider">
-          <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>
-            Key Considerations:
-          </h4>
-          <ul style={{ listStyleType: "disc", paddingLeft: "1.25rem", marginBottom: "1rem" }}>
+          <h4 className="content-title">Key Considerations:</h4>
+          <ul className="content-list">
             <li>Budget: Initial cost and long-term expenses</li>
             <li>Usage frequency: Daily commute vs. occasional use</li>
             <li>Duration of stay in Singapore</li>

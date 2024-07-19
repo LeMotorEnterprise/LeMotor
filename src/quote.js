@@ -1,27 +1,21 @@
+import React from 'react';
+import './quote.css';
 import quoteImage from "./Assets/Quote.png";
 
 function Quote() {
-  const containerWrapper = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-    textAlign: "center",
-    flexDirection: "column",
-    marginTop: "5%",
-    marginBottom: "3%",
-    overflow: "hidden",
-  };
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = quoteImage;
+  }, []);
 
-  const imageStyle = {
-    width: "70%",
-    borderRadius: "1.5rem",
-    border: "1px solid #0a1540",
-  };
-
-  return <div style={containerWrapper}>
-    <img src={quoteImage} style={imageStyle} alt="quote" />
-  </div>;
+  return (
+    <>
+      <link rel="preload" as="image" href={quoteImage} />
+      <div className="quote-container">
+        <img src={quoteImage} className="quote-image" alt="quote" />
+      </div>
+    </>
+  );
 }
 
 export default Quote;
