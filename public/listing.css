@@ -185,38 +185,6 @@
   }
 }
 
-@media (max-width: 390px) {
-  .maps {
-    width: 100% !important;
-  }
-  .pstyle {
-    font-size: 80%;
-  }
-
-  .GridMaps {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100% !important;
-  }
-
-  .grid1maps,
-  .grid2maps {
-    width: 100% !important;
-    height: 400px !important;
-    border: none !important;
-  }
-  .canva-embed {
-    width: 100% !important;
-  }
-
-  .contactBody {
-    width: 90% !important;
-    padding: 10px !important;
-  }
-}
-
 .storeButton:hover {
   transform: scale(1.1);
   transition: ease-in-out 0.3s;

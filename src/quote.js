@@ -1,4 +1,4 @@
-import quoteImage from "./Assets/quote.png";
+import quoteImage from "./Assets/Quote.png";
 
 function Quote() {
   const containerWrapper = {
