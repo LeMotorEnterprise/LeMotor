@@ -108,7 +108,6 @@ function GridContainer() {
             autoPlay
             playsInline
             loop
-            loading="lazy"
           />
         </div>
         <div style={gridContainers}>
@@ -137,7 +136,6 @@ function GridContainer() {
             autoPlay
             playsInline
             loop
-            loading="lazy"
           />
         </div>
         <div style={gridContainers}>
