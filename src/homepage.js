@@ -3,7 +3,6 @@ import SpliceElement from "./splice";
 import GridContainer from "./gridContainer";
 import Listings from "./listings";
 import Contactparent from "./contactParent";
-import Socials from "./socials";
 import AboutSection from "./about";
 import Quote from "./quote";
 

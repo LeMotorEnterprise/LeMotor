@@ -1,73 +1,5 @@
 import React, { useState, useEffect } from "react";
-
-const styles = `
-  .carousel-container {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  .review-card {
-    background-color: #f3f4f6;
-    padding: 24px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  .review-card.fade-out {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  .stars {
-    color: #fbbf24;
-    font-size: 24px;
-    margin-bottom: 12px;
-  }
-  .review-text {
-    margin-bottom: 16px;
-  }
-  .author-info {
-    display: flex;
-    align-items: center;
-  }
-  .author-initial {
-    background-color: #065f46;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    margin-right: 12px;
-  }
-  .author-name {
-    font-weight: 600;
-  }
-  .review-date {
-    color: #6b7280;
-    font-size: 14px;
-  }
-  .google-logo {
-    height: 24px;
-    margin-top: 16px;
-  }
-  .nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  .prev-button { left: -20px; }
-  .next-button { right: -20px; }
-`;
+import "./reviewCarousell.css";
 
 const ReviewCard = ({ review, isFading }) => (
   <div className={`review-card ${isFading ? "fade-out" : ""}`}>
@@ -119,18 +51,15 @@ const GoogleReviewsCarousel = ({ reviews }) => {
   }, []);
 
   return (
-    <>
-      <style>{styles}</style>
-      <div className="carousel-container">
-        <ReviewCard review={reviews[currentIndex]} isFading={isFading} />
-        <button onClick={prevReview} className="nav-button prev-button">
-          &#8249;
-        </button>
-        <button onClick={nextReview} className="nav-button next-button">
-          &#8250;
-        </button>
-      </div>
-    </>
+    <div className="carousel-container">
+      <ReviewCard review={reviews[currentIndex]} isFading={isFading} />
+      <button onClick={prevReview} className="nav-button prev-button">
+        &#8249;
+      </button>
+      <button onClick={nextReview} className="nav-button next-button">
+        &#8250;
+      </button>
+    </div>
   );
 };
 
@@ -153,9 +82,9 @@ const sampleReviews = [
 const GoogleReviews = () => {
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>What our clients say!</h1>
+      <h1 className="reviews-title">What our clients say!</h1>
       <GoogleReviewsCarousel reviews={sampleReviews} />
-      <p style={{ textAlign: "center", marginBottom: "10%"}}>Powered by Web Wizards Wigets</p>
+      <p className="powered-by">Powered by Web Wizards Wigets</p>
     </div>
   );
 };
