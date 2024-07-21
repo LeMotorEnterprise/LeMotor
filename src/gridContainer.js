@@ -21,9 +21,9 @@ function GridContainer() {
   const gridWrapper = {
     display: "grid",
     gridTemplateColumns: "1fr 1fr", // Flexible columns
-    gridGap: "30%",
+    gridGap: "8%",
     padding: "10px",
-    width: "60%", // Increased width for better spacing
+    width: "80%", // Increased width for better spacing
     marginTop: "3%",
     marginBottom: "5%",
   };
@@ -39,6 +39,7 @@ function GridContainer() {
   const videoStyle = {
     width: "100%",
     height: "100%",
+    borderRadius: "15px",
   };
 
   return (
