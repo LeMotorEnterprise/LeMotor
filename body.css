@@ -1,11 +1,13 @@
 html  {
     margin: auto !important;
     padding: none !important;
+    overflow-x: hidden;
 }
 body {
     margin: auto !important;
     padding: none !important;
     font-family: Montserrat, sans-serif;
+    overflow-x: hidden;
 }
 
 @media (max-width: 430px) {
