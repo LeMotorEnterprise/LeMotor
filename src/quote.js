@@ -1,6 +1,6 @@
 import React from 'react';
 import './quote.css';
-import quoteImage from "./Assets/Quote.png";
+import quoteImage from "./Assets/quote.png";
 
 function Quote() {
   React.useEffect(() => {

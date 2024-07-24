@@ -5,6 +5,7 @@ import Listings from "./listings";
 import Contactparent from "./contactParent";
 import AboutSection from "./about";
 import Quote from "./quote";
+import Leasing from "./Leasing";
 
 function Homepage() {
   return (
@@ -14,6 +15,7 @@ function Homepage() {
       <AboutSection />
       <GridContainer />
       <Listings />
+      <Leasing />
       <Contactparent />
     </div>
   );
