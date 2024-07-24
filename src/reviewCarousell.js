@@ -77,6 +77,12 @@ const sampleReviews = [
     author: "Kris J",
     date: "3 years ago",
   },
+  {
+    rating: 5,
+    text: "Excellent experience - Richard and Alan are responsive and a pleasure to deal with. Absolutely loving the car !",
+    author: "Allen Tan",
+    date: "1 day ago",
+  },
 ];
 
 const GoogleReviews = () => {
