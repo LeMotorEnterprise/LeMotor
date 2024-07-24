@@ -1,22 +1,22 @@
-html  {
-    margin: auto !important;
-    padding: none !important;
-    overflow-x: hidden;
+html {
+  margin: auto !important;
+  padding: none !important;
+  overflow-x: hidden;
 }
 body {
-    margin: auto !important;
-    padding: none !important;
-    font-family: Montserrat, sans-serif;
-    overflow-x: hidden;
+  margin: auto !important;
+  padding: none !important;
+  font-family: Montserrat, sans-serif;
+  overflow-x: hidden;
 }
 
 @media (max-width: 430px) {
-    h1 {
-        font-size: 150% !important;
-    }
+  h1 {
+    font-size: 150% !important;
+  }
 
-    .splineContainer {
-        width: 100% !important;
-        height: 300px !important;
-    }
+  .splineContainer {
+    width: 100% !important;
+    height: 300px !important;
+  }
 }
