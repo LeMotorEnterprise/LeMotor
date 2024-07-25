@@ -28,7 +28,7 @@ function Socials() {
         </div>
         <ElfsightWidget
           className="widget-1"
-          widgetId="552ef7cf-eed5-4527-a527-bcf8dc895861"
+          widgetId="814d8fb8-4dd2-42d8-99c1-27900ae66eee"
         />
       </div>
     </div>
