@@ -37,7 +37,7 @@ const AccordionItem = ({ title, children }) => {
 const CarOptionsSection = () => {
   return (
     <div className="car-options-section">
-      <h1 className="section-title">Why Le Motor Enterprise</h1>
+      <h1 className="section-title">Lease or buy used! It's better!</h1>
       <p className="section-subtitle">Click to expand</p>
 
       <div>
