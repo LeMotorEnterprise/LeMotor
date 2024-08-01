@@ -61,7 +61,7 @@ const CarOptionsSection = () => {
             <li>Lower initial cost compared to new cars</li>
             <li>Avoid steep depreciation of new vehicles</li>
             <li>More affordable Certificate of Entitlement (COE)</li>
-            <li>Wide variety of models available</li>
+            <li>Wide variety of models available including supercars</li>
             <li>Potential for resale value</li>
           </ul>
           <p>
