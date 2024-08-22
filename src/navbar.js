@@ -1,6 +1,5 @@
-//import React modules
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Link, Routes, Navigate } from "react-router-dom";
 
 //import local components
 import topbanner from "./Assets/topBanner.webp";
@@ -10,31 +9,22 @@ import ParentContact from "./contactParent";
 import ListingParent from "./ListingParent";
 
 const NavBar = () => {
-  // state for the hamburger menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  //initial state is false
-  // update isMenuOpen with setIsMenuOpen function
-
   const [isMobileView, setIsMobileView] = useState(false);
-  //initial state is false
-  // update isMobileView with setIsMobileView function
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    //set isMenuOpen reverses the boolean value of isMenuOpen
   };
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768); //trigger the hamburger menu when the screen width is less than or equal to 768px
+      setIsMobileView(window.innerWidth <= 768);
     };
 
     handleResize();
-    // call the handleResize function
     window.addEventListener("resize", handleResize);
 
     return () => {
-      // clean up
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -77,9 +67,8 @@ const NavBar = () => {
     textAlign: "center",
   };
 
-  // the hamburger menu
   const hamburgerStyle = {
-    display: isMobileView ? "block" : "none", // boolean value to either show or hide the hamburger menu
+    display: isMobileView ? "block" : "none",
     fontSize: "30px",
     color: "#fff",
     cursor: "pointer",
@@ -88,7 +77,7 @@ const NavBar = () => {
   };
 
   const navLinksContainerStyle = {
-    display: isMobileView ? "none" : "flex", // boolean value to flex the nav links
+    display: isMobileView ? "none" : "flex",
     justifyContent: "space-around",
     width: "100%",
   };
@@ -99,8 +88,7 @@ const NavBar = () => {
   };
 
   return (
-    // default BrowserRouter homepage
-    <Router basename="/">
+    <Router>
       <div style={bodyStyle}>
         <div
           style={{
@@ -179,9 +167,9 @@ const NavBar = () => {
         <Carmart />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/chat-with-jasonbot" element={<chatbot />} />
           <Route path="/ListingParent" element={<ListingParent />} />
           <Route path="/contact" element={<ParentContact />} />
+          <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
       </div>
     </Router>
