@@ -26,9 +26,10 @@ function Socials() {
           </p>
           <img className="photo-style" src={storeImge} loading="lazy" alt="store" />
         </div>
+        <h1 style={{textAlign: "center"}}>Our Socials</h1>
         <ElfsightWidget
           className="widget-1"
-          widgetId="814d8fb8-4dd2-42d8-99c1-27900ae66eee"
+          widgetId="5ab7242e-e236-47be-8445-4d87a0f4bb4e"
         />
       </div>
     </div>
