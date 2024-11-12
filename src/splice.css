@@ -1,1 +1,21 @@
-.video-container,.video-style{overflow:hidden;width:100%}.container-wrapper{margin-top:3%;display:flex;justify-content:center;align-items:center;width:100%}.spline-container{display:flex;justify-content:center;align-items:center;width:100%}.video-container{display:none}
+.video-container,
+.video-style {
+  overflow: hidden;
+  width: 100%;
+}
+.container-wrapper {
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.spline-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.video-container {
+  display: none;
+}
